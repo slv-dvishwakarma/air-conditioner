@@ -1,9 +1,8 @@
 {
     "banner": {
-        "sub_title": "EXPLOSIVE OFFER: SUMMERS UNDER YOUR CONTROL",
+        "sub_title": "EXPLOSIVE OFFER: SUMMERS UNDER YOUR CONTROL 🌟",
         "title": "Secure your comfort for just 100 ₹",
         "button_label": "Book your AC now!",
-        "button_url": "/",
         "banner_bg": "/home.jpg",
         "banner_front": "/ac1.png"
     },
@@ -59,7 +58,8 @@
         }
     },
     "footer": {
-        "label": "Copyright © 2024. Deal Website. All rights reserved.",
+        "address": "Shop no. 17 Imperial Plaza, Near Roadways, Bareilly.",
+        "map_link": "https://maps.app.goo.gl/S6UnQCzFHkGzMGWy6",
         "social": [
             {
                 "icon": "facebook",
@@ -76,6 +76,49 @@
             {
                 "icon": "Linkedin",
                 "url": "/"
+            }
+        ]
+    },
+    "product": {
+        "sub_title": "Sale",
+        "label": [
+            {
+                "label": "Only 10 in Stock 🌟",
+                "style": "stylish"
+            },
+            {
+                "label": " Hurry, Experience Luxury Cooling Before It's Gone!",
+                "style": "normal"
+            }
+        ],
+        "title": [
+            {
+                "label": "Introducing Our Masterpiece: Crafted with Precision,",
+                "style": "normal"
+            },
+            {
+                "label": "Made in Thailand 🌟",
+                "style": "stylish"
+            }
+        ],
+        "products": [
+            {
+                "product_img": "/product/O General 1.5 & 2 Ton 5 Star Split Inverter AC.jpeg",
+                "product_title": "O General 1.5 & 2 ton Spilit AC 5 star Imported from Thailand, full copper, 5 year warranty + installation kit+ outdoor stand+ complete installation",
+                "currency": "₹",
+                "sale_price": "41,000",
+                "market_price": "73,740",
+                "stock": 10,
+                "rating": 5
+            },
+            {
+                "product_img": "/product/O General 1.5 & 2 Ton 5 Star Split Inverter AC.jpeg",
+                "product_title": "O General 1.5 & 2 ton Spilit AC 5 star Imported from Thailand, full copper, 5 year warranty + installation kit+ outdoor stand+ complete installation",
+                "currency": "₹",
+                "sale_price": "41,000",
+                "market_price": "73,740",
+                "stock": 10,
+                "rating": 5
             }
         ]
     }

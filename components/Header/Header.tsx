@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     <>
       <div className='top-bar bg-[#0F2C49]'>
         <FastMarquee className='flex gap-3'>
-          <span className='text-[#FF5500] font-bold text-lg leading-10'> Dhamaka Offer! Get amazing discounts on air conditioners. This sale is only for 2 days.</span> <Timer endTime={endTime} format="hh:mm:ss" />
+          <span className='text-[#FF5500] font-bold text-[15px] leading-10'> Dhamaka Offer! Get amazing discounts on air conditioners. This sale is only for 2 days. And You Can Visit Our Shop no. 17 Imperial Plaza, Near Roadways, Bareilly </span> <Timer endTime={endTime} format="hh:mm:ss" />
         </FastMarquee>
       </div>
       <ParentContainer className='py-2.5'>

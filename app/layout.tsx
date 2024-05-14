@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
       <Header data={jsonData.header}/>
         {children}
-        <Footer label={jsonData.footer.label} social={jsonData.footer.social}/>
+        <Footer data={jsonData.footer}/>
       </body>
     </html>
   );
