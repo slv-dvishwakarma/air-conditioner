@@ -122,7 +122,7 @@ export const GridBox = ({
   return (
     <div
       className={classNames(
-        "grid sm:grid",
+        "sm:grid",
         columns && GRID_COLS[columns],
         rows && `grid-rows-${rows}`,
         GRID_GAP[gap],

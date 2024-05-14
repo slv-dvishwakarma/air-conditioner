@@ -44,10 +44,10 @@ export const Enquiry: React.FC<EnquiryProps> = ({ enquiry }) => {
                     <GridBox.GridItem columnMerge={1}>
                         <Image src={enquiry.enquiry_img} alt={enquiry.sub_title} width={1920} height={1280} className='rounded-xl'/>
                     </GridBox.GridItem>
-                    <GridBox.GridItem columnMerge={1} className='shadow-[rgba(149,157,165,0.2)_0px_8px_24px] px-8 py-8 rounded-lg'>
+                    <GridBox.GridItem columnMerge={1} className='shadow-[rgba(149,157,165,0.2)_0px_8px_24px] xl:px-8 lg:px-8 md:px-8 px-4 py-8 rounded-lg'>
                         <div className='space-y-5'>
                             <span className='sub-title inline-block text-[#FF5500] text-base font-bold tracking-[1.6px] relative uppercase before:bg-[#FF5500] before:content-[""] before:h-0.5 before:absolute before:w-[35px] before:ml-2.5 before:-mt-px before:left-full before:top-2/4'>{enquiry.sub_title}</span>
-                            <h2 className='text-5xl font-bold text-[#0F2C49]'>
+                            <h2 className='xl:text-5xl lg:text-5xl md:text-4xl text-3xl font-bold text-[#0F2C49]'>
                                 {enquiry.title.map((item, index) => (
                                     <React.Fragment key={index}>
                                         {item.style === "normal" ? (
