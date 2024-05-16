@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { PaymentForm } from '../Razorpay/PaymentForm';
+
+
 
 export const LoginWithOTP = () => {
     const [isOTPVerified, setIsOTPVerified] = useState(false);
@@ -70,7 +73,7 @@ export const LoginWithOTP = () => {
 
                     <div className='space-y-5'>
                         <h3 className='text-[25px] font-semibold text-[#0F2C49] text-center'>Please Book Your AC</h3>
-                        <button className='bg-[#FF5500] shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto'>Book</button>
+                        <PaymentForm />
                     </div>
                 </div>
             )}
