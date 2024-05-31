@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-export const WhatsApp = ({ number }: { number: string }) => {
-  // const isMobileDevice = () => {
-  //   if (window) {
-  //     return window?.matchMedia("(max-width: 768px)").matches;
-  //   }
-  //   return false;
-  // };
+const WhatsApp = ({ number }: { number: string }) => {
+  const isMobileDevice = () => {
+    if (window) {
+      return window?.matchMedia("(max-width: 768px)").matches;
+    }
+    return false;
+  };
 
-  // const link = isMobileDevice()
-  //   ? "https://wa.me/"
-  //   : "https://web.whatsapp.com/send?phone=";
+  const link = isMobileDevice()
+    ? "https://wa.me/"
+    : "https://web.whatsapp.com/send?phone=";
 
-  const link = "https://web.whatsapp.com/send?phone=";
+  // const link = "https://web.whatsapp.com/send?phone=";
 
   return (
     <div className="fixed z-[1] flex right-2  bottom-2 h-max  flex-col ">
@@ -28,3 +28,5 @@ export const WhatsApp = ({ number }: { number: string }) => {
     </div>
   );
 };
+
+export default WhatsApp;
