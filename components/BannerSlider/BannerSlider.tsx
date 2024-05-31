@@ -6,7 +6,7 @@ import jsonData from "../../app/jsonData.json"
 import hi from "../../app/hi.json"
 
 export const BannerSlider = () => {
-
+  const height = "h-[calc(100dvh-183.5px)] md:h-[calc(100dvh-144.9px)]";
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
     useEffect(() => {
       const newLanguage = localStorage.getItem('language');
@@ -21,13 +21,13 @@ export const BannerSlider = () => {
     }, []);
 
   return (
-    <div>
-        <Slide >
+    <div className="mb-[-7px] inline-block w-full overflow-hidden relative">
+        <Slide height={height}>
             <Image
             src={jsonDataFile.banner.content.banner}
             className="w-full h-full object-cover"
-            width={5997}
-            height={2350}
+            width={1349}
+            height={1349}
             alt=""
           />
         </Slide>
@@ -36,12 +36,14 @@ export const BannerSlider = () => {
 };
 
 const Slide = ({
-  children
+  children,
+  height,
 }: {
   children: ReactNode;
+  height: string;
 }) => {
   return (
-    <div>
+    <div className={`relative overflow-hidden ${height}`}>
       {children}
       <PaymentForm />
     </div>

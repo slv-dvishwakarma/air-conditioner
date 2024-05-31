@@ -36,9 +36,9 @@ export const Timer: React.FC<TimerProps> = ({ endTime }) => {
   return (
     <div>
       {timerFinished ? (
-        <p className="text-red-500 ml-[10px] font-semibold">Timer Finished</p>
+        <p className="text-[var(--primary-color)] ml-[10px] font-semibold">Timer Finished</p>
       ) : (
-        <p className="text-red-500 ml-[10px] font-semibold">
+        <p className="text-[var(--primary-color)] ml-[10px] font-semibold">
           {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
         </p>
       )}

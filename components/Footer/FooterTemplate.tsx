@@ -16,7 +16,7 @@ interface FooterProps {
 
 export const FooterTemplate: React.FC<FooterProps> = ({ social_platform }) => {
   return (
-    <ParentContainer className="bg-[#0F2C49] py-5">
+    <ParentContainer className="bg-[#0F2C49] xl:py-1 lg:py-1 md:py-1 py-5">
       <GridBox 
         columns={2}
         gap={10}

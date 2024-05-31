@@ -50,13 +50,13 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) 
     <>
       <div className="top-bar bg-[#0F2C49]">
         <FastMarquee className="flex gap-3">
-          <span className="text-slate-400 font-bold text-[15px] leading-10">
+          <span className="text-white font-bold text-[15px] leading-10">
             {top_bar.offer_title}  <Link href={`tel:${main_header.phone.title}`}> {main_header.phone.title}</Link>
           </span>
           <Timer endTime={endTime} />
         </FastMarquee>
       </div>
-      <ParentContainer className="py-2.5">
+      <ParentContainer className="xl:py-1 lg:py-1 md:py-1 py-3">
         <div className="xl:flex lg:flex md:flex block justify-between items-center">
           <div className="flex items-center justify-between">
             <Link href="/">
