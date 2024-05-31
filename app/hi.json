@@ -22,6 +22,13 @@
             }
         }
     },
+    "banner": {
+        "type": "BannerSlider",
+        "props": {},
+        "content": {
+          "banner": "banner-hi.jpg"
+        }
+      },
     "footer": {
         "type": "footer",
         "props": {},
@@ -29,11 +36,11 @@
             "social_platform": [
                 {
                     "icon": "facebook",
-                    "url": "/"
+                    "url": "https://www.facebook.com/profile.php?id=61560225367741"
                 },
                 {
                     "icon": "instagram",
-                    "url": "/"
+                    "url": "https://www.instagram.com/bareillydeals/"
                 }
             ]
         }

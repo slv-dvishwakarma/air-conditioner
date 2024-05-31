@@ -5,13 +5,13 @@ import jsonData from "../../app/jsonData.json";
 import hi from "../../app/hi.json";
 
 export const Header = () => {
-    const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(jsonData);
+  const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
     useEffect(() => {
       const newLanguage = localStorage.getItem('language');
       if (newLanguage === 'en') {
         setJsonDataFile(jsonData);
       } else if (newLanguage === null) {
-        setJsonDataFile(jsonData);
+        setJsonDataFile(hi);
       }
       else {
         setJsonDataFile(hi);

@@ -1,72 +1,47 @@
 "use client";
-import React, { ReactNode } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import React, { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import { PaymentForm } from "../Razorpay/PaymentForm";
-export const BannerSlider = () => {
-  const height = "h-[calc(100dvh-183.5px)] md:h-[calc(100dvh-188.6px)]";
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dotsClass: "slick-dots slick-thumb",
-    autoplay: true,
-    autoplaySpeed: 5000,
-  };
-  return (
-    <div className={`mb-[-7px] inline-block w-full overflow-hidden relative`}>
-      <Slider {...settings}>
-        <Slide height={height}>
-          <Image
-            src="/banner-1.jpg"
-            className="w-full h-full object-cover desktop"
-            width={1349}
-            height={1349}
-            alt=""
-          />
-          <Image
-            src="/mobile-banner-1.jpg"
-            className="w-full h-full object-cover mobile"
-            width={1349}
-            height={1349}
-            alt=""
-          />
-        </Slide>
+import jsonData from "../../app/jsonData.json"
+import hi from "../../app/hi.json"
 
-        <Slide height={height}>
-          <Image
-            src="/banner-1.jpg"
-            className="w-full h-full object-cover desktop"
-            width={1349}
-            height={1349}
-            alt=""
-          />
-          <Image
-            src="/mobile-banner-1.jpg"
-            className="w-full h-full object-cover mobile"
-            width={1349}
-            height={1349}
+export const BannerSlider = () => {
+
+  const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
+    useEffect(() => {
+      const newLanguage = localStorage.getItem('language');
+      if (newLanguage === 'en') {
+        setJsonDataFile(jsonData);
+      } else if (newLanguage === null) {
+        setJsonDataFile(hi);
+      }
+      else {
+        setJsonDataFile(hi);
+      }
+    }, []);
+
+  return (
+    <div>
+        <Slide >
+            <Image
+            src={jsonDataFile.banner.content.banner}
+            className="w-full h-full object-cover"
+            width={5997}
+            height={2350}
             alt=""
           />
         </Slide>
-      </Slider>
     </div>
   );
 };
 
 const Slide = ({
-  children,
-  height,
+  children
 }: {
   children: ReactNode;
-  height: string;
 }) => {
   return (
-    <div className={`relative overflow-hidden ${height}`}>
+    <div>
       {children}
       <PaymentForm />
     </div>

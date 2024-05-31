@@ -27,7 +27,7 @@ export const FooterTemplate: React.FC<FooterProps> = ({ social_platform }) => {
             <ul className="flex gap-5 md:gap-[40px]">
               {social_platform.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.url}>
+                  <Link href={item.url} target="_blank">
                     <SVGIcon
                       className="text-white hover:text-[#FF5500] text-xl w-[35px] h-[35px] flex items-center justify-center border rounded-[50%] border-solid border-white hover:border-[#FF5500]"
                       name={item.icon}

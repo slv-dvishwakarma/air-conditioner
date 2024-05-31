@@ -1,8 +1,7 @@
+"use client"
 import { SVGIcon } from '@/components/Icons';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
-
-
 
 export const LanguageSelector = () => {
   const options = ['English - EN', 'हिंदी - HI'];
@@ -12,7 +11,8 @@ export const LanguageSelector = () => {
     uniqueId.current = `dropdown-${Math.floor(Math.random() * 1000000)}`;
   }, []);
 
-  const [selectedOption, setSelectedOption] = useState<string>(options[0]);
+  // Set default to Hindi
+  const [selectedOption, setSelectedOption] = useState<string>(options[1]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [dropdownPosition, setDropdownPosition] = useState<'top' | 'bottom'>('bottom');
 
@@ -58,6 +58,9 @@ export const LanguageSelector = () => {
       } else if (savedLanguage === 'en') {
         setSelectedOption('English - EN');
       }
+    } else {
+      setSelectedOption('हिंदी - HI'); // Set default to Hindi if no saved language
+      localStorage.setItem('language', 'hi');
     }
   }, []); 
 
@@ -125,4 +128,3 @@ export const LanguageSelector = () => {
     </div>
   );
 };
-

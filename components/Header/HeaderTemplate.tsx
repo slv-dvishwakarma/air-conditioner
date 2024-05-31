@@ -63,8 +63,8 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) 
               <Image
                 src={main_header.logo}
                 alt={main_header.alt}
-                width={306}
-                height={47}
+                width={620}
+                height={124}
                 className="m-auto md:h-[54px] h-[36px] w-auto"
               />
             </Link>

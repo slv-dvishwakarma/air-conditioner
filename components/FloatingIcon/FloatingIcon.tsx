@@ -12,18 +12,18 @@ const WhatsAppCOmponent = dynamic(() => import("../WhatsApp/WhatsApp"), {
 
 export const FloatingIcon = () => {
 
-  const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(jsonData);
-  useEffect(() => {
-    const newLanguage = localStorage.getItem('language');
-    if (newLanguage === 'en') {
-      setJsonDataFile(jsonData);
-    } else if (newLanguage === null) {
-      setJsonDataFile(jsonData);
-    }
-    else {
-      setJsonDataFile(hi);
-    }
-  }, []);
+  const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
+    useEffect(() => {
+      const newLanguage = localStorage.getItem('language');
+      if (newLanguage === 'en') {
+        setJsonDataFile(jsonData);
+      } else if (newLanguage === null) {
+        setJsonDataFile(hi);
+      }
+      else {
+        setJsonDataFile(hi);
+      }
+    }, []);
 
   return (
     <>

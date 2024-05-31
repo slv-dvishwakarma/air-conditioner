@@ -41,7 +41,7 @@ export const PaymentForm: React.FC = () => {
         currency: "INR",
         name: "Bareilly Deals",
         description: "Payment for O General AC Booking",
-        image: "/fav.png",
+        image: "/logo.png",
         theme: {
           color: "var(--primary-color)",
         },
