@@ -1,5 +1,4 @@
 import { Banner } from "@/components/Banner";
-import { Enquiry } from "@/components/Enquiry";
 import jsonData from "./jsonData.json";
 import { ProductBar } from "@/components/ProductBar";
 import { BannerSlider } from "@/components/BannerSlider";

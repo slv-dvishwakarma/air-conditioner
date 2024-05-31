@@ -1,11 +1,26 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useApp } from "../AppProvider";
 import { createPortal } from "react-dom";
 import { Form } from "../Enquiry/Form";
-import { RxCross2 } from "react-icons/rx";
+import jsonData from "../../app/jsonData.json";
+import hi from "../../app/hi.json";
 
 export const ContactModal = () => {
+
+  const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(jsonData);
+  useEffect(() => {
+    const newLanguage = localStorage.getItem('language');
+    if (newLanguage === 'en') {
+      setJsonDataFile(jsonData);
+    } else if (newLanguage === null) {
+      setJsonDataFile(jsonData);
+    }
+    else {
+      setJsonDataFile(hi);
+    }
+  }, []);
+
   const { toggleContact, contact }: any = useApp();
 
   if (!contact) {
@@ -16,25 +31,7 @@ export const ContactModal = () => {
       <div className="bg-white rounded-[20px] text-[#2c3345] min-w-[90%] md:min-w-[480px] px-8 py-8">
         <Form
           onClose={() => toggleContact()}
-          form={{
-            fname: {
-              name: "fname",
-              placeholde: "Enter Your Full Name",
-            },
-            email: {
-              name: "email",
-              placeholde: "Enter Your Email",
-            },
-            phone: {
-              name: "phone",
-              placeholde: "Enter Your Phone Number",
-            },
-            textarea: {
-              name: "textarea",
-              placeholde: "Enter Your Message",
-            },
-            button: "Submit",
-          }}
+          form={jsonDataFile.contact.content}
         />
       </div>
     </div>,

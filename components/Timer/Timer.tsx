@@ -1,49 +1,47 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { SVGIcon } from '../Icons';
+// components/Timer.tsx
+
+import React, { useEffect, useState } from 'react';
 
 interface TimerProps {
   endTime: Date;
-  format?: string;
 }
 
-export const Timer: React.FC<TimerProps> = ({ endTime, format = 'default' }) => {
-  const [timeRemaining, setTimeRemaining] = useState<number>(0);
+export const Timer: React.FC<TimerProps> = ({ endTime }) => {
+  const [timeRemaining, setTimeRemaining] = useState<number>(calculateRemainingTime());
+  const [timerFinished, setTimerFinished] = useState<boolean>(false);
+
+  function calculateRemainingTime(): number {
+    const currentTime = new Date();
+    const difference = endTime.getTime() - currentTime.getTime();
+    return difference > 0 ? difference : 0;
+  }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = endTime.getTime() - now;
-
-      setTimeRemaining(distance);
+    const timerInterval = setInterval(() => {
+      const remaining = calculateRemainingTime();
+      setTimeRemaining(remaining);
+      if (remaining <= 0) {
+        clearInterval(timerInterval);
+        setTimerFinished(true);
+      }
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, [endTime]);
+    return () => clearInterval(timerInterval);
+  }, []);
 
-  const formatTime = (time: number): string => {
-    if (format === 'default') {
-      const days = Math.floor(time / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((time % (1000 * 60)) / 1000);
-
-      return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    } else if (format === 'hh:mm:ss') {
-      const hours = Math.floor(time / (1000 * 60 * 60));
-      const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((time % (1000 * 60)) / 1000);
-
-      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    } else {
-      return 'Invalid format';
-    }
-  };
+  const hours = Math.floor(timeRemaining / 3600000);
+  const minutes = Math.floor((timeRemaining % 3600000) / 60000);
+  const seconds = Math.floor((timeRemaining % 60000) / 1000);
 
   return (
-    <div className="text-center ">
-      <div className="text-white ml-3 flex items-center gap-2"> <SVGIcon className="text-xl" name="clock" /> {formatTime(timeRemaining)}</div>
+    <div>
+      {timerFinished ? (
+        <p className="text-red-500 ml-[10px] font-semibold">Timer Finished</p>
+      ) : (
+        <p className="text-red-500 ml-[10px] font-semibold">
+          {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+        </p>
+      )}
     </div>
   );
 };
-

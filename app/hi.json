@@ -1,0 +1,72 @@
+{
+    "header": {
+        "type": "BannerSlider",
+        "props": {},
+        "content": {
+            "top_bar": {
+                "offer_title": "शानदार ऑफर! ₹70000 का AC अब ₹30000 में! जल्दी करें, कहीं मौका छूट न जाए - अभी संपर्क करें!"
+            },
+            "main_header": {
+                "logo": "/logo.png",
+                "alt": "Best Deals",
+                "phone": {
+                    "icon": "tel",
+                    "title": "+91 94576 94725"
+                },
+                "email": {
+                    "icon": "enevelop",
+                    "title": "info@bareillydeals.com"
+                },
+                "contact_button": "अभी संपर्क करें",
+                "rajorpay_button": "अभी बुक करें "
+            }
+        }
+    },
+    "footer": {
+        "type": "footer",
+        "props": {},
+        "content": {
+            "social_platform": [
+                {
+                    "icon": "facebook",
+                    "url": "/"
+                },
+                {
+                    "icon": "instagram",
+                    "url": "/"
+                }
+            ]
+        }
+    },
+    "contact": {
+        "type": "contact",
+        "props": {},
+        "content": {
+            "cnt_form": {
+                "title": "संपर्क करें",
+                "button": "सबमिट करें",
+                "fname": {
+                    "name": "fname",
+                    "placeholder": "अपना पूरा नाम दर्ज करें"
+                },
+                "email": {
+                    "name": "email",
+                    "placeholder": "अपना ईमेल दर्ज करें"
+                },
+                "phone": {
+                    "name": "phone",
+                    "placeholder": "अपना फ़ोन नंबर दर्ज करें"
+                },
+                "textarea": {
+                    "name": "textarea",
+                    "placeholder": "अपना संदेश दर्ज करें"
+                }
+            },
+            "status_success": {
+                "heading": "सफलतापूर्ण",
+                "message": "आपका ईमेल सफलतापूर्वक भेज दिया गया है। हम आपके संदेश को मान्यता दे रहे हैं और जल्द ही आपसे संपर्क करेंगे। धन्यवाद!"
+            },
+            "status_error": "क्षमा करें, आपका ईमेल भेजने में समस्या हुई। हम अनसेंट संदेशों के साथ इसे देख रहे हैं। कृपया पुनः प्रयास करें।"
+        }
+    }
+}

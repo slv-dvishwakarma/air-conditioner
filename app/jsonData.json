@@ -1,129 +1,72 @@
 {
-  "banner": {
-    "sub_title": "EXPLOSIVE OFFER: SUMMERS UNDER YOUR CONTROL 🌟",
-    "title": "Secure your comfort for just 100 ₹",
-    "button_label": "Book your AC now!",
-    "banner_bg": "/home.jpg",
-    "banner_front": "/ac1.png"
-  },
-  "whatsapp": {
-    "number": "+91 94576 94725",
-    "message": ""
-  },
-  "banner_style": {
-    "image_1": "/floating-obj2.png",
-    "image_2": "/base1.png"
-  },
-  "enquiry": {
-    "section_img": "/pattern-1.png",
-    "enquiry_img": "/bg4.jpg",
-    "sub_title": "Enquiry Now",
-    "title": [
-      {
-        "label": "Get In",
-        "style": "normal"
-      },
-      {
-        "label": "Touch",
-        "style": "stylish"
-      }
-    ],
-    "form": {
-      "fname": {
-        "name": "fname",
-        "placeholde": "Enter Your Full Name"
-      },
-      "email": {
-        "name": "email",
-        "placeholde": "Enter Your Email"
-      },
-      "phone": {
-        "name": "phone",
-        "placeholde": "Enter Your Phone Number"
-      },
-      "textarea": {
-        "name": "textarea",
-        "placeholde": "Enter Your Message"
-      },
-      "button": "Submit"
-    }
-  },
   "header": {
-    "logo": "/logo.png",
-    "alt": "Bareilly Deals in Bareilly",
-    "label": "Book Your AC Now",
-    "phone": {
-      "icon": "tel",
-      "title": "+91 94576 94725"
-    },
-    "email": {
-      "icon": "enevelop",
-      "title": "info@bareillydeals.com"
+    "type": "BannerSlider",
+    "props": {},
+    "content": {
+      "top_bar": {
+        "offer_title": "Amazing Offer! Get a ₹70000 AC for just ₹30000! Hurry, don't miss this chance - Contact us now!"
+      },
+      "main_header": {
+        "logo": "/logo.png",
+        "alt": "Best Deals",
+        "phone": {
+          "icon": "tel",
+          "title": "+91 94576 94725"
+        },
+        "email": {
+          "icon": "enevelop",
+          "title": "info@bareillydeals.com"
+        },
+        "contact_button": "Contact Now",
+        "rajorpay_button": "Book Now"
+      }
     }
   },
   "footer": {
-    "address": "Shop no. 17 Imperial Plaza, Near Roadways, Bareilly.",
-    "map_link": "https://maps.app.goo.gl/S6UnQCzFHkGzMGWy6",
-    "social": [
-      {
-        "icon": "facebook",
-        "url": "/"
-      },
-      {
-        "icon": "instagram",
-        "url": "/"
-      },
-      {
-        "icon": "twitter",
-        "url": "/"
-      },
-      {
-        "icon": "Linkedin",
-        "url": "/"
-      }
-    ]
+    "type": "footer",
+    "props": {},
+    "content": {
+      "social_platform": [
+        {
+          "icon": "facebook",
+          "url": "/"
+        },
+        {
+          "icon": "instagram",
+          "url": "/"
+        }
+      ]
+    }
   },
-  "product": {
-    "sub_title": "Sale",
-    "label": [
-      {
-        "label": "Only 10 in Stock 🌟",
-        "style": "stylish"
+  "contact": {
+    "type": "contact",
+    "props": {},
+    "content": {
+      "cnt_form": {
+        "title": "Get In Touch",
+        "button": "Submit",
+        "fname": {
+          "name": "fname",
+          "placeholder": "Enter Your Full Name"
+        },
+        "email": {
+          "name": "email",
+          "placeholder": "Enter Your Email"
+        },
+        "phone": {
+          "name": "phone",
+          "placeholder": "Enter Your Phone Number"
+        },
+        "textarea": {
+          "name": "textarea",
+          "placeholder": "Enter Your Message"
+        }
       },
-      {
-        "label": " Hurry, Experience Luxury Cooling Before It's Gone!",
-        "style": "normal"
-      }
-    ],
-    "title": [
-      {
-        "label": "Introducing Our Masterpiece: Crafted with Precision,",
-        "style": "normal"
+      "status_success": {
+        "heading": "Successfull",
+        "message": "Your email has been sent successfully. We are acknowledging your message and will get back to you soon. Thank you!"
       },
-      {
-        "label": "Made in Thailand 🌟",
-        "style": "stylish"
-      }
-    ],
-    "products": [
-      {
-        "product_img": "/product/O General 1.5 & 2 Ton 5 Star Split Inverter AC.jpeg",
-        "product_title": "O General 1.5 & 2 ton Spilit AC 5 star Imported from Thailand, full copper, 5 year warranty + installation kit+ outdoor stand+ complete installation",
-        "currency": "₹",
-        "sale_price": "41,000",
-        "market_price": "73,740",
-        "stock": 10,
-        "rating": 5
-      },
-      {
-        "product_img": "/product/O General 1.5 & 2 Ton 5 Star Split Inverter AC.jpeg",
-        "product_title": "O General 1.5 & 2 ton Spilit AC 5 star Imported from Thailand, full copper, 5 year warranty + installation kit+ outdoor stand+ complete installation",
-        "currency": "₹",
-        "sale_price": "41,000",
-        "market_price": "73,740",
-        "stock": 10,
-        "rating": 5
-      }
-    ]
+      "status_error": "Sorry, we had a problem sending your email. We are seeing this with unsent messages. Please try again."
+    }
   }
 }
