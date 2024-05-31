@@ -8,9 +8,9 @@ export const POST = async (req: Request) => {
   try {
     const transporter = nodemailer.createTransport({
       pool: true,
-      host: "mail.bareillydeals.com",
-      port: 465,
-      secure: true,
+      host: "us2.smtp.mailhostbox.com",
+      port: 993,
+      secure: false,
       auth: {
         user: "info@bareillydeals.com",
         pass: "(vX50L+k&Ff-",

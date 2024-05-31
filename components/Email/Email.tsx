@@ -56,7 +56,7 @@ export const Email: React.FC<InputProps> = ({
       <div className="mt-[10px]">
         {errors[name] && (
           <span className="text-red-500 text-sm">
-            Please Enter {placeholder}
+           {placeholder}
           </span>
         )}
       </div>

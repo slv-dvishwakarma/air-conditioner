@@ -49,8 +49,8 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
 
   const [message, setMessage] = useState<any>(null);
   const onSubmit = async (data: any) => {
-     const url = "https://bareillydeals.com/api/send-email";
-    //  const url = "http://localhost:3000/api/send-email";
+    const url = "https://bareillydeals.com/api/send-email";
+      // const url = "http://localhost:3000/api/send-email";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
