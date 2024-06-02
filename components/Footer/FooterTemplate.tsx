@@ -22,7 +22,7 @@ export const FooterTemplate: React.FC<FooterProps> = ({ social_platform, copyrig
         <div className="md:w-6/12 flex gap-5 text-white">
           {copyright_text}
         </div>
-        <div className="flex justify-between">
+        
         <ul className="flex gap-5 md:gap-[40px]">
           {social_platform.map((item, index) => (
             <li key={index}>
@@ -35,10 +35,6 @@ export const FooterTemplate: React.FC<FooterProps> = ({ social_platform, copyrig
             </li>
           ))}
         </ul>
-        <div className="xl:hidden lg:hidden md:hidden block pr-[70px]">
-        <LanguageSelector />
-        </div>
-        </div>
       </div>
     </ParentContainer>
   );

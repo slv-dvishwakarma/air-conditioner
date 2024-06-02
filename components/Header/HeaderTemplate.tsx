@@ -70,10 +70,11 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
                 alt={main_header.alt}
                 width={620}
                 height={124}
-                className="m-auto md:h-[54px] h-[36px] w-auto"
+                className="xl:m-auto lg:m-auto md:m-auto xl:h-[54px] lg:h-[54px] md:h-[54px] h-[unset] xl:w-auto lg:w-auto md:w-auto w-[70%]"
               />
             </Link>
-            <div className="flex lg:hidden gap-5 justify-between">
+            <div className="flex xl:hidden lg:flex md:flex flex gap-4 justify-between">
+              
               <Link
                 href={`tel:${main_header.phone.title}`}
                 className="flex items-center gap-[10px] text-[var(--primary-color)]"
@@ -92,9 +93,10 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
                   name={main_header.email.icon}
                 />
               </Link>
+              <LanguageSelector />
             </div>
           </div>
-          <div className="contact-details hidden lg:flex">
+          <div className="contact-details xl:block hidden lg:hidden">
             <div className="xl:flex lg:flex md:flex block gap-[15px] xl:space-y-0 lg:space-y-0 md:space-y-0 space-y-5">
               <div className="flex items-center gap-[10px] font-semibold xl:mt-0 lg:mt-0 md:mt-0 mt-5">
                 <Link

@@ -97,7 +97,7 @@ export const LanguageSelector = () => {
       <span className="rounded-md shadow-sm text-white relative">
         <button
           type="button"
-          className="flex items-center rounded-md text-sm font-medium text-[var(--primary-color)] border border-solid border-[var(--primary-color)] xl:w-[60px] lg:w-[40px] md:w-[40px] w-[60px]  xl:text-white lg:text-white md:text-white text-black px-[10px] py-2"
+          className="flex items-center rounded-md text-sm font-medium text-[var(--primary-color)] border border-solid border-[var(--primary-color)] xl:w-[60px] lg:w-[40px] md:w-[60px] w-[45px]  xl:text-white lg:text-white md:text-white text-black px-[10px] py-2"
           id={uniqueId.current!}
           aria-expanded={isOpen}
           aria-haspopup="listbox"
@@ -106,7 +106,7 @@ export const LanguageSelector = () => {
             {selectedLanguageAbbreviation}
           </span>
           <SVGIcon
-            className="absolute text-xl xl:right-[5px] lg:right-0 md:right-0 xl:right-[-20px] lg:right-[-20px] md:right-[-20px] right-[3px] text-[var(--primary-color)]"
+            className="absolute text-xl xl:right-[5px] lg:right-0 md:right-0 xl:right-[-20px] lg:right-[-20px] md:right-[0px] right-[3px] text-[var(--primary-color)]"
             name="ArrowDown"
           />
         </button>
@@ -119,7 +119,7 @@ export const LanguageSelector = () => {
           aria-label="Dropdown Options"
           className={`origin-${dropdownPosition}-right absolute ${
             dropdownPosition === "top" ? "bottom-7" : "top-7"
-          } xl:right-0 lg:right-0 md:right-0 left-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 xl:left-[-35px] lg:left-0 md:left-0 left-[-20px] w-[120px] z-[1] overflow-hidden`}
+          } xl:right-0 lg:right-0 md:right-0 left-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 xl:left-[-35px] lg:left-0 md:left-[unset] left-[-70px] w-[120px] z-[1] overflow-hidden`}
         >
           {options.map((option) => (
             <div
