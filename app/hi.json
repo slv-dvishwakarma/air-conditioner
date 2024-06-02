@@ -31,8 +31,8 @@
             "banner_img_height_mobile": 1600
         },
         "content": {
-          "banner_desktop": "/banner-hi.jpg",
-          "banner_mobile": "/mobile-hi.jpg"
+          "banner_desktop": "/baner-hi.jpg",
+          "banner_mobile": "/mobil-hi.jpg"
         }
       },
     "footer": {
