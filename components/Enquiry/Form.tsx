@@ -50,7 +50,7 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
   const [message, setMessage] = useState<any>(null);
   const onSubmit = async (data: any) => {
     const url = "https://bareillydeals.com/api/send-email";
-      // const url = "http://localhost:3000/api/send-email";
+    // const url = "http://localhost:3000/api/send-email";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
@@ -71,13 +71,15 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
           <div className="flex justify-center">
             <CiCircleCheck size={70} className="text-green-500" />
           </div>
-          <h2 className="text-center text-2xl font-[600] mt-3">{form.status_success.heading}</h2>
+          <h2 className="text-center text-2xl font-[600] mt-3">
+            {form.status_success.heading}
+          </h2>
 
           <div className=" mt-2 text-center inline-block p-2 text-sm break-words w-[90%] md:w-[436px] ">
             {form.status_success.message}
           </div>
           <button
-            className="border absolute -top-3 -right-3 p-1 text-red-500 border-red-200 hover:border-red-500 active:border-red-100 rounded-full"
+            className="border absolute -top-3 -right-3 p-1 text-[var(--primary-color)] border-red-200 hover:border-[var(--primary-color)] active:border-red-100 rounded-full"
             onClick={() => onClose?.()}
           >
             <RxCross2 />
@@ -88,7 +90,7 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
           <div className="flex justify-between mb-3 items-center">
             <h2 className="text-3xl font-[700] ">{form.cnt_form.title}</h2>
             <button
-              className="border  -top-3 -right-3 p-1 text-red-500 border-red-200 hover:border-red-500 active:border-red-100 rounded-full"
+              className="border  -top-3 -right-3 p-1 text-[var(--primary-color)] border-red-200 hover:border-[var(--primary-color)] active:border-red-100 rounded-full"
               onClick={() => onClose?.()}
             >
               <RxCross2 />
@@ -133,7 +135,7 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
             </button>
             <div>
               {message === "failed" ? (
-                <div className="text-red-500 border border-red-500 border-dashed rounded-md mt-2 inline-block p-2 text-sm break-words w-[90%] md:w-[436px] ">
+                <div className="text-[var(--primary-color)] border border-[var(--primary-color)] border-dashed rounded-md mt-2 inline-block p-2 text-sm break-words w-[90%] md:w-[436px] ">
                   {form.status_error}
                 </div>
               ) : (

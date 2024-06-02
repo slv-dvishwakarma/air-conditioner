@@ -33,7 +33,10 @@ interface HeaderProps {
   top_bar: TopBarItem;
 }
 
-export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) => {
+export const HeaderTemplate: React.FC<HeaderProps> = ({
+  main_header,
+  top_bar,
+}) => {
   const [endTime, setEndTime] = useState<Date>(new Date());
 
   // Set the end time to be 24 hours from now
@@ -42,23 +45,25 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) 
     newEndTime.setHours(newEndTime.getHours() + 24);
     setEndTime(newEndTime);
   }, []);
-  
-
 
   const { toggleContact }: any = useApp();
   return (
     <>
-      <div className="top-bar bg-[#0F2C49]">
+      <div className="top-bar bg-black">
         <FastMarquee className="flex gap-3">
           <span className="text-white font-bold text-[15px] leading-10">
-            {top_bar.offer_title}  <Link href={`tel:${main_header.phone.title}`}> {main_header.phone.title}</Link>
+            {top_bar.offer_title}{" "}
+            <Link href={`tel:${main_header.phone.title}`}>
+              {" "}
+              {main_header.phone.title}
+            </Link>
           </span>
           <Timer endTime={endTime} />
         </FastMarquee>
       </div>
       <ParentContainer className="xl:py-1 lg:py-1 md:py-1 py-3">
         <div className="xl:flex lg:flex md:flex block justify-between items-center">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between grow">
             <Link href="/">
               <Image
                 src={main_header.logo}
@@ -68,7 +73,7 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) 
                 className="m-auto md:h-[54px] h-[36px] w-auto"
               />
             </Link>
-            <div className="flex md:hidden gap-5 justify-between">
+            <div className="flex lg:hidden gap-5 justify-between">
               <Link
                 href={`tel:${main_header.phone.title}`}
                 className="flex items-center gap-[10px] text-[var(--primary-color)]"
@@ -89,7 +94,7 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({ main_header, top_bar }) 
               </Link>
             </div>
           </div>
-          <div className="contact-details hidden md:flex">
+          <div className="contact-details hidden lg:flex">
             <div className="xl:flex lg:flex md:flex block gap-[15px] xl:space-y-0 lg:space-y-0 md:space-y-0 space-y-5">
               <div className="flex items-center gap-[10px] font-semibold xl:mt-0 lg:mt-0 md:mt-0 mt-5">
                 <Link

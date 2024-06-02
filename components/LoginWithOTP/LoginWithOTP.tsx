@@ -47,14 +47,18 @@ export const LoginWithOTP = () => {
               })}
               placeholder="Enter your phone number"
               className={`form-control w-full focus:outline-none focus:shadow-none shadow-none h-[50px] placeholder:text-[#9D9D9D] text-[14px] px-3 border rounded-md border-solid border-[#BEBEBE] ${
-                errors.phoneNumber ? "border-red-500" : ""
+                errors.phoneNumber ? "border-[var(--primary-color)]" : ""
               }`}
             />
             {errors.phoneNumber && errors.phoneNumber.type === "required" && (
-              <p className="text-red-500">Phone number is required</p>
+              <p className="text-[var(--primary-color)]">
+                Phone number is required
+              </p>
             )}
             {errors.phoneNumber && errors.phoneNumber.type === "pattern" && (
-              <p className="text-red-500">Invalid phone number</p>
+              <p className="text-[var(--primary-color)]">
+                Invalid phone number
+              </p>
             )}
             {!otpSent ? (
               <div className="pt-[15px]">
@@ -76,7 +80,9 @@ export const LoginWithOTP = () => {
                   placeholder="Enter OTP"
                   className="form-control w-full focus:outline-none focus:shadow-none shadow-none h-[50px] placeholder:text-[#9D9D9D] text-[14px] px-3 border rounded-md border-solid border-[#BEBEBE]"
                 />
-                {errors.otp && <p className="text-red-500">OTP is required</p>}
+                {errors.otp && (
+                  <p className="text-[var(--primary-color)]">OTP is required</p>
+                )}
                 <div className="pt-[15px]">
                   <button
                     type="submit"

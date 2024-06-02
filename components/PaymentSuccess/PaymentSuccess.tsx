@@ -11,7 +11,7 @@ export const PaymentSuccess = () => {
     <div className="fixed flex items-center justify-center left-0 top-0 z-[8] bg-black bg-opacity-45 w-full h-full">
       <div className="bg-white rounded-lg relative">
         <button
-          className="border absolute top-3 right-3 z-[99] p-1 text-red-500 border-red-200 hover:border-red-500 active:border-red-100 rounded-full"
+          className="border absolute top-3 right-3 z-[99] p-1 text-[var(--primary-color)] border-red-200 hover:border-[var(--primary-color)] active:border-red-100 rounded-full"
           onClick={() => managePaymentId?.(undefined)}
         >
           <RxCross2 />

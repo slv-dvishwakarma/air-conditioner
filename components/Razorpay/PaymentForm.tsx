@@ -43,7 +43,7 @@ export const PaymentForm: React.FC = () => {
         description: "Payment for O General AC Booking",
         image: "/logo.png",
         theme: {
-          color: "var(--primary-color)",
+          color: "#ff8f4d",
         },
         handler: function (response: any) {
           // Modify this type if you know the response structure
@@ -74,7 +74,7 @@ export const PaymentForm: React.FC = () => {
   return (
     <button
       onClick={openRazorpay}
-      className="bg-[#FF5500] shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto"
+      className="bg-[#ff8f4d] shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto"
     >
       Book Now
     </button>

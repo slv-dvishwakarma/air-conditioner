@@ -65,8 +65,8 @@ export const Phone: React.FC<InputProps> = ({
       />
       <div className="mt-[10px]">
         {errors[name] && (
-          <span className="text-red-500 text-sm">
-           {placeholder}
+          <span className="text-[var(--primary-color)] text-sm">
+            {placeholder}
           </span>
         )}
       </div>
