@@ -97,7 +97,7 @@ export const LanguageSelector = () => {
       <span className="rounded-md shadow-sm text-white relative">
         <button
           type="button"
-          className="flex items-center rounded-md text-sm font-medium text-[var(--primary-color)] border border-solid border-[var(--primary-color)] xl:w-[60px] lg:w-[40px] md:w-[60px] w-[45px]  xl:text-white lg:text-white md:text-white text-black px-[10px] py-2"
+          className="flex items-center rounded-md text-sm font-medium text-[var(--primary-color)] border border-solid border-[var(--primary-color)] xl:w-[60px] lg:w-[40px] md:w-[60px] w-[50px]  xl:text-white lg:text-white md:text-white text-black px-[10px] py-2"
           id={uniqueId.current!}
           aria-expanded={isOpen}
           aria-haspopup="listbox"
