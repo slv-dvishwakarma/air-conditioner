@@ -4,9 +4,9 @@ import Image from "next/image";
 import { PaymentForm } from "../Razorpay/PaymentForm";
 import jsonData from "../../app/jsonData.json";
 import hi from "../../app/hi.json";
+import classNames from 'classnames';
 
 export const BannerSlider = () => {
-  // const height = "h-[calc(100dvh-210.5px)] md:h-[calc(100dvh-168.9px)]";
   const height =
     "h-[calc(122dvh)] md:h-[calc(146dvh)]  lg:h-[calc(100dvh-168.9px)]";
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(
@@ -25,14 +25,22 @@ export const BannerSlider = () => {
 
   return (
     <div className="mb-[-7px] inline-block w-full overflow-hidden relative">
-      <Slide height={height}>
+      <Slide height={height} className="desktop">
         <Image
-          // src={jsonDataFile.banner.content.banner}
-          src={"/mobile-hi.jpg"}
-          className="w-full h-full object-cover"
-          width={1349}
-          height={1349}
-          alt=""
+          src={jsonDataFile.banner.content.banner_desktop}
+          className="w-full h-full"
+          width={jsonDataFile.banner.props.banner_img_width_desktop}
+          height={jsonDataFile.banner.props.banner_img_height_desktop}
+          alt="Bareilly Deals AC"
+        />
+      </Slide>
+      <Slide height={height} className="mobile">
+        <Image
+          src={jsonDataFile.banner.content.banner_mobile}
+          className="w-full h-full"
+          width={jsonDataFile.banner.props.banner_img_width_mobile}
+          height={jsonDataFile.banner.props.banner_img_height_mobile}
+          alt="Bareilly Deals AC"
         />
       </Slide>
     </div>
@@ -40,16 +48,18 @@ export const BannerSlider = () => {
 };
 
 const Slide = ({
+  className,
   children,
   height,
 }: {
   children: ReactNode;
   height: string;
+  className?: string;
 }) => {
   return (
-    <div className={`relative overflow-hidden ${height}`}>
-      {children}
-      <PaymentForm />
-    </div>
+    <div className={classNames("relative overflow-hidden", height, className)}>
+    {children}
+    <PaymentForm />
+  </div>
   );
 };

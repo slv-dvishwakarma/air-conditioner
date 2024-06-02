@@ -1,6 +1,6 @@
 {
   "header": {
-    "type": "BannerSlider",
+    "type": "header",
     "props": {},
     "content": {
       "top_bar": {
@@ -8,10 +8,10 @@
       },
       "main_header": {
         "logo": "/bareilly.png",
-        "alt": "Best Deals",
+        "alt": "Bareilly Deals AC",
         "phone": {
           "icon": "tel",
-          "title": "+91 94576 94725"
+          "title": "+91 94564 56784"
         },
         "email": {
           "icon": "enevelop",
@@ -24,15 +24,22 @@
   },
   "banner": {
     "type": "BannerSlider",
-    "props": {},
+    "props": {
+      "banner_img_width_desktop": 1920,
+      "banner_img_height_desktop": 821,
+      "banner_img_width_mobile": 735,
+      "banner_img_height_mobile": 1600
+    },
     "content": {
-      "banner": "banner-en.jpg"
+      "banner_desktop": "/banner-en.jpg",
+      "banner_mobile": "/mobile-hi.jpg"
     }
   },
   "footer": {
     "type": "footer",
     "props": {},
     "content": {
+      "copyright_text": "© Bareillydeals Solutions Limited 2024",
       "social_platform": [
         {
           "icon": "facebook",

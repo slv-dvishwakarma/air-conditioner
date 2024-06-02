@@ -19,6 +19,6 @@ export const Footer = () => {
     }, []);
 
   return (
-    <FooterTemplate social_platform={jsonDataFile.footer.content.social_platform} />
+    <FooterTemplate social_platform={jsonDataFile.footer.content.social_platform} copyright_text={jsonDataFile.footer.content.copyright_text}/>
   )
 }

@@ -1,20 +1,18 @@
-// components/Timer.tsx
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 interface TimerProps {
   endTime: Date;
 }
 
 export const Timer: React.FC<TimerProps> = ({ endTime }) => {
-  const [timeRemaining, setTimeRemaining] = useState<number>(calculateRemainingTime());
-  const [timerFinished, setTimerFinished] = useState<boolean>(false);
-
-  function calculateRemainingTime(): number {
+  const calculateRemainingTime = useCallback((): number => {
     const currentTime = new Date();
     const difference = endTime.getTime() - currentTime.getTime();
     return difference > 0 ? difference : 0;
-  }
+  }, [endTime]);
+
+  const [timeRemaining, setTimeRemaining] = useState<number>(calculateRemainingTime());
+  const [timerFinished, setTimerFinished] = useState<boolean>(false);
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -27,7 +25,7 @@ export const Timer: React.FC<TimerProps> = ({ endTime }) => {
     }, 1000);
 
     return () => clearInterval(timerInterval);
-  }, []);
+  }, [calculateRemainingTime]);
 
   const hours = Math.floor(timeRemaining / 3600000);
   const minutes = Math.floor((timeRemaining % 3600000) / 60000);

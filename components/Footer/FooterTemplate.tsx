@@ -12,15 +12,17 @@ interface IconItem {
 
 interface FooterProps {
   social_platform: IconItem[];
+  copyright_text: string;
 }
 
-export const FooterTemplate: React.FC<FooterProps> = ({ social_platform }) => {
+export const FooterTemplate: React.FC<FooterProps> = ({ social_platform, copyright_text }) => {
   return (
-    <ParentContainer className="bg-black xl:py-4 lg:py-1 md:py-1 py-5">
+    <ParentContainer className="bg-black xl:py-[3.7px] lg:py-1 md:py-1 py-5">
       <div className="flex md:flex-row md:py-[13px] flex-col-reverse gap-3 justify-between md:pr-[80px] md:items-center">
         <div className="md:w-6/12 flex gap-5 text-white">
-          &copy; Bareillydeals Solutions Limited 2024
+          {copyright_text}
         </div>
+        <div className="flex justify-between">
         <ul className="flex gap-5 md:gap-[40px]">
           {social_platform.map((item, index) => (
             <li key={index}>
@@ -33,25 +35,11 @@ export const FooterTemplate: React.FC<FooterProps> = ({ social_platform }) => {
             </li>
           ))}
         </ul>
+        <div className="xl:hidden lg:hidden md:hidden block pr-[70px]">
+        <LanguageSelector />
+        </div>
+        </div>
       </div>
-      {/* <GridBox
-        columns={2}
-        gap={10}
-        className="items-center xl:space-y-0 lg:space-y-0 md:space-y-0 space-y-5"
-      >
-        <GridBox.GridItem></GridBox.GridItem>
-
-        <GridBox.GridItem>
-          <div className="md:w-6/12 flex gap-5 justify-end">
-            <div className="xl:hidden lg:hidden md:hidden block">
-              <LanguageSelector />
-            </div>
-          </div>
-        </GridBox.GridItem> */}
-      {/* <GridBox.GridItem columnMerge={1} className="xl:hidden lg:hidden md:hidden block">
-          
-        </GridBox.GridItem>  */}
-      {/* </GridBox> */}
     </ParentContainer>
   );
 };
