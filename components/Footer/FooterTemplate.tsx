@@ -19,11 +19,11 @@ export const FooterTemplate: React.FC<FooterProps> = ({ social_platform, copyrig
   return (
     <ParentContainer className="bg-black xl:py-[3.7px] lg:py-1 md:py-1 py-5">
       <div className="flex md:flex-row md:py-[13px] flex-col-reverse gap-3 justify-between md:pr-[80px] md:items-center">
-        <div className="md:w-6/12 flex gap-5 text-white">
+        <div className="md:w-6/12 flex gap-5 text-white xl:justify-start lg:justify-start md:justify-start justify-center">
           {copyright_text}
         </div>
         
-        <ul className="flex gap-5 md:gap-[40px]">
+        <ul className="flex gap-5 md:gap-[40px] xl:justify-start lg:justify-start md:justify-start justify-center">
           {social_platform.map((item, index) => (
             <li key={index}>
               <Link href={item.url} target="_blank">

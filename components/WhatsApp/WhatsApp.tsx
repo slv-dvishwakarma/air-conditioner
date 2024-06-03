@@ -25,7 +25,7 @@ const WhatsApp = ({ number }: { number: string }) => {
     : "https://web.whatsapp.com/send?phone=";
 
   return (
-    <div className="fixed z-[1] flex right-2 bottom-2 h-max flex-col">
+    <div className="fixed z-[1] flex right-2 bottom-[40px] h-max flex-col">
       <a href={`${link}${number}`} target="_blank" rel="noopener noreferrer">
         <Image
           src="/whatsApp_icon.webp"
