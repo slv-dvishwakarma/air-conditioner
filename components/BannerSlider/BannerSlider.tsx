@@ -25,26 +25,28 @@ export const BannerSlider = () => {
   return (
     <div className="mb-[-7px] inline-block w-full overflow-hidden relative">
       <Slide height={height} className="desktop">
-        <button onClick={() => toggleContact()}>
+        
         <Image
           src={jsonDataFile.banner.content.banner_desktop}
-          className="w-full h-full"
+          className="w-full h-full cursor-pointer"
           width={jsonDataFile.banner.props.banner_img_width_desktop}
           height={jsonDataFile.banner.props.banner_img_height_desktop}
           alt="Bareilly Deals AC"
+          onClick={() => toggleContact()}
         />
-        </button>
+        
       </Slide>
       <Slide height={height} className="mobile">
-      <button onClick={() => toggleContact()}>
+      
         <Image
           src={jsonDataFile.banner.content.banner_mobile}
-          className="w-full h-full"
+          className="w-full h-full cursor-pointer"
           width={jsonDataFile.banner.props.banner_img_width_mobile}
           height={jsonDataFile.banner.props.banner_img_height_mobile}
           alt="Bareilly Deals AC"
+          onClick={() => toggleContact()}
         />
-        </button>
+     
       </Slide>
     </div>
   );

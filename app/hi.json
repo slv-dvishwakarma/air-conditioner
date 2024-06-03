@@ -27,8 +27,8 @@
         "props": {
             "banner_img_width_desktop": 1920,
             "banner_img_height_desktop": 821,
-            "banner_img_width_mobile": 735,
-            "banner_img_height_mobile": 1600
+            "banner_img_width_mobile": 1654,
+            "banner_img_height_mobile": 3600
         },
         "content": {
           "banner_desktop": "/desk-hi.jpg",
