@@ -8,7 +8,7 @@
       },
       "main_header": {
         "logo": "/Bareilly-Deals-black-logo.png",
-        "alt": "Bareilly Deals AC",
+        "alt": "#Bareilly Deals AC",
         "phone": {
           "icon": "tel",
           "title": "+91 94564 56784"
@@ -57,7 +57,7 @@
     "props": {},
     "content": {
       "cnt_form": {
-        "title": "Get In Touch",
+        "title": "Enquiry 😊",
         "button": "Submit",
         "fname": {
           "name": "fname",

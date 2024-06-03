@@ -42,6 +42,7 @@ export const Phone: React.FC<InputProps> = ({
               </label>
             )}
             <span className="input-border flex items-center border-b-[#BEBEBE] border-b border-solid mt-[12px]">
+            <SVGIcon name="mobile" className="text-[var(--primary-color)] text-[14px]" />
               <input
                 type="tel"
                 className="form-control w-full border-none rounded-[5px] border-gray-700 focus:outline-none focus:shadow-none shadow-none h-[43px] placeholder:text-[#9D9D9D] text-[14px] px-3"

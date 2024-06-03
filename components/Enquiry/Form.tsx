@@ -88,7 +88,7 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
       ) : (
         <>
           <div className="flex justify-between mb-3 items-center">
-            <h2 className="text-3xl font-[700] ">{form.cnt_form.title}</h2>
+            <h2 className="text-3xl font-[700] text-[var(--primary-color)]">{form.cnt_form.title}</h2>
             <button
               className="border  -top-3 -right-3 p-1 text-[var(--primary-color)] border-red-200 hover:border-[var(--primary-color)] active:border-red-100 rounded-full text-[23px]"
               onClick={() => onClose?.()}
