@@ -36,7 +36,7 @@ export const BannerSlider = () => {
         />
         
       </Slide>
-      <Slide height={height} className="mobile">
+      <Slide className="mobile">
       
         <Image
           src={jsonDataFile.banner.content.banner_mobile}
@@ -58,7 +58,7 @@ const Slide = ({
   height,
 }: {
   children: ReactNode;
-  height: string;
+  height?: string;
   className?: string;
 }) => {
   return (

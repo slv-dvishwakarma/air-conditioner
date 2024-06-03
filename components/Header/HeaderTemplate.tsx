@@ -10,6 +10,7 @@ import { PaymentForm } from "../Razorpay/PaymentForm";
 import { useApp } from "../AppProvider";
 import { LanguageSelector } from "../LanguageSelector";
 import { MultiLanguage } from "../LanguageSelector/MultiLanguage";
+import { Language } from "../LanguageSelector/Language";
 
 interface ContactItem {
   icon: string;
@@ -95,7 +96,8 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
                 />
               </Link>
               {/* <LanguageSelector /> */}
-              <MultiLanguage />
+              {/* <MultiLanguage /> */}
+              <Language />
             </div>
           </div>
           <div className="contact-details xl:block hidden lg:hidden">
@@ -125,18 +127,19 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
                 </Link>
               </div>
               <div className="hidden md:flex items-center gap-3">
-                <button
+                {/* <button
                   className="bg-[var(--primary-color)] text-white rounded-md px-5 py-2  relative"
                   onClick={() => toggleContact()}
                 >
                   {main_header.contact_button}
-                </button>
+                </button> */}
                 {/* <div className="bg-[var(--primary-color)] text-white rounded-md px-5 py-2  relative">
                   {main_header.rajorpay_button} <PaymentForm />
                 </div> */}
                 <div>
                   {/* <LanguageSelector /> */}
-                  <MultiLanguage />
+                  {/* <MultiLanguage /> */}
+                  <Language />
                 </div>
               </div>
             </div>
