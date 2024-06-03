@@ -15,12 +15,9 @@ export const FloatingIcon = () => {
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
     useEffect(() => {
       const newLanguage = localStorage.getItem('language');
-      if (newLanguage === 'en') {
+      if (newLanguage === 'EN') {
         setJsonDataFile(jsonData);
-      } else if (newLanguage === null) {
-        setJsonDataFile(hi);
-      }
-      else {
+      } else if (newLanguage === "हि") {
         setJsonDataFile(hi);
       }
     }, []);

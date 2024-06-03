@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Bareilly Deals",
-  description: "Amazing Offer! Get a ₹70000 AC for just ₹30000! Hurry, don't miss this chance - Contact us now!",
+  description: "Bareilly AC Deals",
 };
 
 export default function RootLayout({

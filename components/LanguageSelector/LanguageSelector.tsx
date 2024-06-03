@@ -64,7 +64,7 @@ export const LanguageSelector = () => {
         setSelectedOption("English - EN");
       }
     } else {
-      setSelectedOption("हिंदी - HI"); // Set default to Hindi if no saved language
+      setSelectedOption("हिंदी - HI"); 
       localStorage.setItem("language", "hi");
     }
   }, []);
