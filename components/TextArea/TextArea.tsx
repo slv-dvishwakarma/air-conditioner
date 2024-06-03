@@ -37,7 +37,7 @@ export const TextArea: React.FC<TextareaProps> = ({
               placeholder={placeholder}
               onChange={onChange}
               value={value}
-              className="border w-full border-solid border-[#BEBEBE] h-[133px] rounded-md placeholder:text-[16px] placeholder:text-[#9D9D9D] px-3 pt-3 focus:outline-none"
+              className="w-full border-b-[#BEBEBE] border-b border-solid h-[133px] placeholder:text-[14px] placeholder:text-[#9D9D9D] px-3 pt-3 focus:outline-none"
             />
           </div>
         )}

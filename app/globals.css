@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #ff8f4d;
+  --primary-color: #ED1C24;
 }
 
 @media (max-width: 767px) {

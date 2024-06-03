@@ -4,10 +4,10 @@
     "props": {},
     "content": {
       "top_bar": {
-        "offer_title": "Amazing Offer! Get a ₹70000 AC for just ₹30000! Hurry, don't miss this chance - Contact us now!"
+        "offer_title": "🌟 Bareilly Deals presents the biggest AC sale of the year! 🌟 Unbeatable prices for 2 DAYS ONLY! Limited stock available! Contact us!"
       },
       "main_header": {
-        "logo": "/bareilly.png",
+        "logo": "/Bareilly-Deals-black-logo.png",
         "alt": "Bareilly Deals AC",
         "phone": {
           "icon": "tel",
@@ -39,7 +39,7 @@
     "type": "footer",
     "props": {},
     "content": {
-      "copyright_text": "© Bareillydeals Solutions Limited 2024",
+      "copyright_text": "© Bareilly deals Solutions Limited 2024",
       "social_platform": [
         {
           "icon": "facebook",

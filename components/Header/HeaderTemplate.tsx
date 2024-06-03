@@ -51,7 +51,7 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
   const { toggleContact }: any = useApp();
   return (
     <>
-      <div className="top-bar bg-black">
+      <div className="top-bar bg-[#262626]">
         <FastMarquee className="flex gap-3">
           <span className="text-white font-bold text-[15px] leading-10">
             {top_bar.offer_title}{" "}
@@ -72,7 +72,7 @@ export const HeaderTemplate: React.FC<HeaderProps> = ({
                 alt={main_header.alt}
                 width={620}
                 height={124}
-                className="xl:m-auto lg:m-auto md:m-auto xl:h-[54px] lg:h-[54px] md:h-[54px] h-[unset] xl:w-auto lg:w-auto md:w-auto w-[70%]"
+                className="xl:m-auto lg:m-auto md:m-auto xl:h-[54px] lg:h-[54px] md:h-[54px] h-[unset] xl:w-auto lg:w-auto md:w-auto w-[80%]"
               />
             </Link>
             <div className="flex xl:hidden lg:flex md:flex flex gap-4 justify-between">
