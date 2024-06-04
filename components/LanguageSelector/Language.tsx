@@ -27,7 +27,7 @@ export const Language: React.FC = () => {
     const buttonLabel = language === hindiLanguage ? englishLanguage : hindiLanguage;
 
     return (
-        <div className='Language'>
+        <div className='Language' id='Language'>
             <button 
                 onClick={handleLanguageChange} 
                 className='border w-[35px] h-[35px] rounded-[50%] border-solid border-[var(--primary-color)] text-[var(--primary-color)]'>

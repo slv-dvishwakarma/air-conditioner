@@ -33,7 +33,7 @@ export const Email: React.FC<InputProps> = ({
         name={name}
         control={control}
         defaultValue=""
-        rules={{ required: true }}
+        rules={{ required: false }}
         render={({ field: { onChange, value } }) => (
           <div>
             {label && (
