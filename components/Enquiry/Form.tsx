@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Text } from "../Text";
@@ -8,6 +7,7 @@ import { TextArea } from "../TextArea";
 import { ImSpinner8 } from "react-icons/im";
 import { CiCircleCheck } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
+import axios from 'axios';
 
 interface SuccessItem {
   heading: string;
@@ -48,22 +48,24 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
   } = useForm();
 
   const [message, setMessage] = useState<any>(null);
+
   const onSubmit = async (data: any) => {
-    const url = "https://bareillydeals.com/api/send-email";
-    // const url = "http://localhost:3000/api/send-email";
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-    if (response.status === 200) {
-      setMessage("success");
-      setTimeout(() => {
-        onClose?.();
-      }, 3000);
-    } else {
+    try {
+      const response = await axios.post("http://bareillydeals.com/submit_contact.php", data);
+      if (response.status === 200) {
+        setMessage("success");
+        setTimeout(() => {
+          onClose?.();
+        }, 3000);
+      } else {
+        setMessage("failed");
+      }
+    } catch (error) {
       setMessage("failed");
+      console.error('Error submitting form:', error);
     }
   };
+
   return (
     <>
       {message === "success" ? (
@@ -97,20 +99,18 @@ export const Form: React.FC<FormProps> = ({ form, onClose }) => {
             </button>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            
-              <Text
-                name={form.cnt_form.fname.name}
-                placeholder={form.cnt_form.fname.placeholder}
-                control={control}
-                errors={errors}
-              />
-              <Email
-                name={form.cnt_form.email.name}
-                placeholder={form.cnt_form.email.placeholder}
-                control={control}
-                errors={errors}
-              />
-            
+            <Text
+              name={form.cnt_form.fname.name}
+              placeholder={form.cnt_form.fname.placeholder}
+              control={control}
+              errors={errors}
+            />
+            <Email
+              name={form.cnt_form.email.name}
+              placeholder={form.cnt_form.email.placeholder}
+              control={control}
+              errors={errors}
+            />
             <Phone
               name={form.cnt_form.phone.name}
               placeholder={form.cnt_form.phone.placeholder}
