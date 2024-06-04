@@ -10,7 +10,7 @@ export const POST = async (req: Request) => {
     port: 587,
     secure: true,
     auth: {
-      user: "info@bareillydeals.com",
+      user: "mail@bareillydeals.com",
       pass: "(vX50L+k&Ff-",
     },
     tls: {
