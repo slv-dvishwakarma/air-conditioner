@@ -11,8 +11,8 @@ export const POST = async (req: Request) => {
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "dilipvishwakarma7878@gmail.com", // Your Gmail address
-        pass: "RohitDilipDeepak@31707878", // Your Gmail password
+        user: "github7878@gmail.com", // Your Gmail address
+        pass: "Dilip@7878", // Your Gmail password
       },
       tls: {
         rejectUnauthorized: false,
@@ -20,8 +20,8 @@ export const POST = async (req: Request) => {
     });
 
     const info = await transporter.sendMail({
-      from: "dilipvishwakarma7878@gmail.com", // Sender address
-      to: 'dilipvishwakarma7878@gmail.com', // List of receivers
+      from: "github7878@gmail.com", // Sender address
+      to: 'github7878@gmail.com', // List of receivers
       subject: "New Inquiry", // Subject line
       html: `
         <div style="max-width:680px;margin:0 auto;padding:45px 30px 60px;background:#f4f7ff;background-image:url(https://ci3.googleusercontent.com/meips/ADKq_Nbb-zeLPmU0tNDq_LjiyPV6l6d7bsUL4WgAutzIzC8d4JzeR-GI34SFoGLTKDd9tFkFlWB2P_CKUVgH3uNz-bhDpiOJB-X2ff2ageymomNwR0sHcO4RMcShk6YBML3WGuMzWrxN5qo=s0-d-e1-ft#https://res.cloudinary.com/davni9ef9/image/upload/v1704368789/IMG_4291_azqi2n.jpg);background-repeat:no-repeat;background-size:800px 452px;background-position:top center;font-size:14px;color:#434343">
