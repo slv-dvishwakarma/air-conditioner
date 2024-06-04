@@ -57,7 +57,7 @@
     "props": {},
     "content": {
       "cnt_form": {
-        "title": "Enquiry 😊",
+        "title": "Enquiry",
         "button": "Submit",
         "fname": {
           "name": "fname",

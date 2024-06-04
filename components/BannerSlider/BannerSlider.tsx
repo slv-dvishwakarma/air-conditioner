@@ -31,7 +31,7 @@ export const BannerSlider = () => {
           className="w-full h-full cursor-pointer"
           width={jsonDataFile.banner.props.banner_img_width_desktop}
           height={jsonDataFile.banner.props.banner_img_height_desktop}
-          alt="#Bareilly Cool Savings #Beat the Heat in Bareilly #Stay Cool, Save Big in Bareilly"
+          alt="#Bareilly Deals #Bareilly Electronics #Bareilly AC, #Bareilly AC Deals"
           onClick={() => toggleContact()}
         />
         
@@ -43,7 +43,7 @@ export const BannerSlider = () => {
           className="w-full h-full cursor-pointer"
           width={jsonDataFile.banner.props.banner_img_width_mobile}
           height={jsonDataFile.banner.props.banner_img_height_mobile}
-          alt="#Bareilly Cool Savings #Beat the Heat in Bareilly #Stay Cool, Save Big in Bareilly"
+          alt="#Bareilly Deals #Bareilly Electronics #Bareilly AC, #Bareilly AC Deals"
           onClick={() => toggleContact()}
         />
      
