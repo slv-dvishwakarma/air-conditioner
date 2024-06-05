@@ -8,9 +8,9 @@ export const Header = () => {
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
     useEffect(() => {
       const newLanguage = localStorage.getItem('language');
-      if (newLanguage === 'EN') {
+      if (newLanguage === 'ENG') {
         setJsonDataFile(jsonData);
-      } else if (newLanguage === "हि") {
+      } else if (newLanguage === "हिन्दी") {
         setJsonDataFile(hi);
       }
     }, []);

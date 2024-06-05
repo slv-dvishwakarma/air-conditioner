@@ -30,7 +30,7 @@ export const PaymentForm: React.FC = () => {
     }
   }, []);
 
-  const paymentAmount = 10000; // Amount in paisa (1 INR = 100 paisa)
+  const paymentAmount = 9900; // Amount in paisa (1 INR = 100 paisa)
 
   const openRazorpay = () => {
     if (window?.Razorpay) {
@@ -41,9 +41,9 @@ export const PaymentForm: React.FC = () => {
         currency: "INR",
         name: "Bareilly Deals",
         description: "Payment for O General AC Booking",
-        image: "/logo.png",
+        image: "/fav-icon.png",
         theme: {
-          color: "#ff8f4d",
+          color: "#ED1C24",
         },
         handler: function (response: any) {
           // Modify this type if you know the response structure

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 export const Language: React.FC = () => {
-    const hindiLanguage: string = "हि";
-    const englishLanguage: string = "EN";
+    const hindiLanguage: string = "हिन्दी";
+    const englishLanguage: string = "ENG";
 
     const [language, setLanguage] = useState<string>(hindiLanguage);
 
@@ -30,7 +30,7 @@ export const Language: React.FC = () => {
         <div className='Language' id='Language'>
             <button 
                 onClick={handleLanguageChange} 
-                className='border w-[35px] h-[35px] rounded-[50%] border-solid border-[var(--primary-color)] text-[var(--primary-color)]'>
+                className='w-[50px] h-[39px] shadow-[rgba(0,0,0,0.24)_0px_3px_8px] border border-solid border-[#FF3430] text-[var(--primary-color)]'>
                 {buttonLabel}
             </button>
         </div>

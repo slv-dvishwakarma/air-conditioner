@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -32,17 +31,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
- 
-    if (typeof window !== 'undefined') { // Ensure code runs only on the client-side
+  if (typeof window !== 'undefined') { // Ensure code runs only on the client-side
+    window.addEventListener('load', () => {
+      if (!window.gtag) {
+        console.error("Google Analytics is not loaded.");
+        return;
+      }
+
+      console.log("Google Analytics is loaded. Adding event listeners...");
+
       // Link Click Tracking
       document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          if (window.gtag) {
-            window.gtag('event', 'link_click', {
-              'event_category': 'engagement',
-              'event_label': link.href
-            });
-          }
+          console.log(`Link clicked: ${link.href}`);
+          window.gtag('event', 'link_click', {
+            'event_category': 'engagement',
+            'event_label': link.href
+          });
         });
       });
 
@@ -53,22 +58,20 @@ export default function RootLayout({
 
         formFields.forEach(field => {
           field.addEventListener('focus', () => {
-            if (window.gtag) {
-              window.gtag('event', 'form_interaction', {
-                'event_category': 'engagement',
-                'event_label': 'form_focus'
-              });
-            }
+            console.log(`Form field focused:`);
+            window.gtag('event', 'form_interaction', {
+              'event_category': 'engagement',
+              'event_label': 'form_focus'
+            });
           });
         });
 
         form.addEventListener('submit', () => {
-          if (window.gtag) {
-            window.gtag('event', 'form_submission', {
-              'event_category': 'engagement',
-              'event_label': 'form_submitted'
-            });
-          }
+          console.log('Form submitted');
+          window.gtag('event', 'form_submission', {
+            'event_category': 'engagement',
+            'event_label': 'form_submitted'
+          });
         });
       }
 
@@ -78,13 +81,12 @@ export default function RootLayout({
       if (languageSelector) {
         languageSelector.addEventListener('change', () => {
           languageChangeCount++;
-          if (window.gtag) {
-            window.gtag('event', 'language_change', {
-              'event_category': 'engagement',
-              'event_label': languageSelector.value,
-              'value': languageChangeCount
-            });
-          }
+          console.log(`Language changed to: ${languageSelector.value}`);
+          window.gtag('event', 'language_change', {
+            'event_category': 'engagement',
+            'event_label': languageSelector.value,
+            'value': languageChangeCount
+          });
         });
       }
 
@@ -93,28 +95,26 @@ export default function RootLayout({
       const contactButton = document.querySelector('#contact-button');
       if (contactButton && contactModal) {
         contactButton.addEventListener('click', () => {
-          if (window.gtag) {
-            window.gtag('event', 'contact_modal_open', {
-              'event_category': 'engagement',
-              'event_label': 'contact_modal_opened'
-            });
-          }
+          console.log('Contact modal opened');
+          window.gtag('event', 'contact_modal_open', {
+            'event_category': 'engagement',
+            'event_label': 'contact_modal_opened'
+          });
         });
 
         const formInModal = contactModal.querySelector('form') as HTMLFormElement | null;
         if (formInModal) {
           formInModal.addEventListener('submit', () => {
-            if (window.gtag) {
-              window.gtag('event', 'contact_form_submitted', {
-                'event_category': 'engagement',
-                'event_label': 'contact_form_submitted'
-              });
-            }
+            console.log('Contact form in modal submitted');
+            window.gtag('event', 'contact_form_submitted', {
+              'event_category': 'engagement',
+              'event_label': 'contact_form_submitted'
+            });
           });
         }
       }
-    }
- 
+    });
+  }
 
   return (
     <html lang="en">

@@ -8,14 +8,14 @@ export const Footer = () => {
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
     useEffect(() => {
       const newLanguage = localStorage.getItem('language');
-      if (newLanguage === 'EN') {
+      if (newLanguage === 'ENG') {
         setJsonDataFile(jsonData);
-      } else if (newLanguage === "हि") {
+      } else if (newLanguage === "हिन्दी") {
         setJsonDataFile(hi);
       }
     }, []);
 
   return (
-    <FooterTemplate social_platform={jsonDataFile.footer.content.social_platform} copyright_text={jsonDataFile.footer.content.copyright_text}/>
+    <FooterTemplate content={jsonDataFile.footer.content} location_icon={jsonDataFile.footer.props.location_icon}/>
   )
 }

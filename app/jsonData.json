@@ -37,9 +37,14 @@
   },
   "footer": {
     "type": "footer",
-    "props": {},
+    "props": {
+      "location_icon": "Location"
+    },
     "content": {
-      "copyright_text": "© Bareilly deals Solutions Limited 2024",
+      "location": {
+        "location_label": "Shop no. 17 Imperial Plaza, Near Roadways, Bareilly.",
+        "map_link": "https://maps.app.goo.gl/iHz7AyzwheDAUMpp6"
+      },
       "social_platform": [
         {
           "icon": "facebook",

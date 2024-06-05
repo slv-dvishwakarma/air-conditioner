@@ -13,14 +13,14 @@ const WhatsAppCOmponent = dynamic(() => import("../WhatsApp/WhatsApp"), {
 export const FloatingIcon = () => {
 
   const [jsonDataFile, setJsonDataFile] = useState<typeof jsonData | typeof hi>(hi);
-    useEffect(() => {
-      const newLanguage = localStorage.getItem('language');
-      if (newLanguage === 'EN') {
-        setJsonDataFile(jsonData);
-      } else if (newLanguage === "हि") {
-        setJsonDataFile(hi);
-      }
-    }, []);
+  useEffect(() => {
+    const newLanguage = localStorage.getItem('language');
+    if (newLanguage === 'ENG') {
+      setJsonDataFile(jsonData);
+    } else if (newLanguage === "हिन्दी") {
+      setJsonDataFile(hi);
+    }
+  }, []);
 
   return (
     <>
