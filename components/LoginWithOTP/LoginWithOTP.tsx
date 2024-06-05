@@ -103,7 +103,7 @@ export const LoginWithOTP = () => {
             <h3 className="text-[25px] font-semibold text-[#0F2C49] text-center">
               Please Book Your AC
             </h3>
-            <PaymentForm />
+            {/* <PaymentForm /> */}
           </div>
         </div>
       )}

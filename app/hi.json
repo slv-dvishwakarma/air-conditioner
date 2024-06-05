@@ -26,13 +26,13 @@
         "type": "BannerSlider",
         "props": {
             "banner_img_width_desktop": 1920,
-            "banner_img_height_desktop": 821,
-            "banner_img_width_mobile": 1654,
-            "banner_img_height_mobile": 3600
+            "banner_img_height_desktop": 865,
+            "banner_img_width_mobile": 1000,
+            "banner_img_height_mobile": 2054
         },
         "content": {
-          "banner_desktop": "/desk-hi.jpg",
-          "banner_mobile": "/mob-hi.jpg"
+            "banner_desktop": "/banner/desk_hi.jpg",
+            "banner_mobile": "/banner/mobile_hi.jpg"
         }
       },
     "footer": {
@@ -87,5 +87,14 @@
             },
             "status_error": "क्षमा करें, आपका ईमेल भेजने में समस्या हुई। हम अनसेंट संदेशों के साथ इसे देख रहे हैं। कृपया पुनः प्रयास करें।"
         }
-    }
+    },
+    "razorpay": {
+        "type": "razorpay",
+        "props": {
+          "price": 9900
+        },
+        "content": {
+          "button_label": "अभी बुक करें @ ₹99/-"
+        }
+      }
 }

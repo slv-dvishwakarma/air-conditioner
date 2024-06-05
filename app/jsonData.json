@@ -26,13 +26,13 @@
     "type": "BannerSlider",
     "props": {
       "banner_img_width_desktop": 1920,
-      "banner_img_height_desktop": 821,
-      "banner_img_width_mobile": 1654,
-      "banner_img_height_mobile": 3600
+      "banner_img_height_desktop": 865,
+      "banner_img_width_mobile": 1000,
+      "banner_img_height_mobile": 2054
     },
     "content": {
-      "banner_desktop": "/desk-en.jpg",
-      "banner_mobile": "/mob-en.jpg"
+      "banner_desktop": "/banner/desk_en.jpg",
+      "banner_mobile": "/banner/mobile_en.jpg"
     }
   },
   "footer": {
@@ -86,6 +86,15 @@
         "message": "Your email has been sent successfully. We are acknowledging your message and will get back to you soon. Thank you!"
       },
       "status_error": "Sorry, we had a problem sending your email. We are seeing this with unsent messages. Please try again."
+    }
+  },
+  "razorpay": {
+    "type": "razorpay",
+    "props": {
+      "price": 9900
+    },
+    "content": {
+      "button_label": "Book now @ ₹99/-"
     }
   }
 }

@@ -31,13 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  if (typeof window !== 'undefined') { // Ensure code runs only on the client-side
+  if (typeof window !== 'undefined') {
     window.addEventListener('load', () => {
+      console.log('Window loaded');
       if (!window.gtag) {
         console.error("Google Analytics is not loaded.");
         return;
       }
-
+  
       console.log("Google Analytics is loaded. Adding event listeners...");
 
       // Link Click Tracking
@@ -54,7 +55,7 @@ export default function RootLayout({
       // Form Interaction Tracking
       const form = document.querySelector('form') as HTMLFormElement | null;
       if (form) {
-        const formFields = form.querySelectorAll('input, textarea, select');
+        const formFields = form.querySelectorAll('input, textarea');
 
         formFields.forEach(field => {
           field.addEventListener('focus', () => {
@@ -77,14 +78,14 @@ export default function RootLayout({
 
       // Language Change Tracking
       let languageChangeCount = 0;
-      const languageSelector = document.querySelector('#Language') as HTMLSelectElement | null;
-      if (languageSelector) {
-        languageSelector.addEventListener('change', () => {
+      const language = document.querySelector('#Language') as HTMLSelectElement | null;
+      if (language) {
+        language.addEventListener('change', () => {
           languageChangeCount++;
-          console.log(`Language changed to: ${languageSelector.value}`);
+          console.log(`Language changed to: ${language.value}`);
           window.gtag('event', 'language_change', {
             'event_category': 'engagement',
-            'event_label': languageSelector.value,
+            'event_label': language.value,
             'value': languageChangeCount
           });
         });

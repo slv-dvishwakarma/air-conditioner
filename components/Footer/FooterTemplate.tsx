@@ -25,8 +25,8 @@ interface FooterProps {
 
 export const FooterTemplate: React.FC<FooterProps> = ({ location_icon, content }) => {
   return (
-    <ParentContainer className="bg-black xl:py-[3.7px] lg:py-1 md:py-1 py-5">
-      <div className="xl:flex lg:flex md:flex hidden md:flex-row md:py-[13px] flex-col-reverse gap-3 justify-between md:pr-[80px] md:items-center">
+    <ParentContainer className="bg-[#262626] xl:py-2 lg:py-1 md:py-1 py-5">
+      <div className="xl:flex lg:flex md:flex hidden md:flex-row flex-col-reverse gap-3 justify-between md:pr-[80px] md:items-center">
         <Link href={content.location.map_link} target="blank" className="group hover:text-[var(--primary-color)] md:w-6/12 flex items-center gap-3 text-white xl:justify-start lg:justify-start md:justify-start justify-center text-[15px]">
           <SVGIcon
             className="text-white group-hover:text-[var(--primary-color)] text-xl w-[30px] h-[30px] flex items-center justify-center border rounded-[50%] border-solid border-white group-hover:border-[var(--primary-color)]"

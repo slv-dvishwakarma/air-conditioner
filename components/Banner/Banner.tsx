@@ -99,7 +99,7 @@ export const Banner: React.FC<BannerProps> = ({ banner, banner_style }) => {
                     {banner.title}
                   </h1>
                   <div className="relative xl:top-[50px] lg:top-[50px] md:top-[50px] top-[30px]">
-                    <PaymentForm />
+                    {/* <PaymentForm /> */}
                     <button
                       onClick={handlePopup}
                       className="bg-[#FF5500] shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold leading-[30px] overflow-hidden relative uppercase transition-all duration-500 ease-[ease] z-[1] px-[3.7rem] py-[1rem] rounded-none"

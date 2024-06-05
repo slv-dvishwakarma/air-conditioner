@@ -6,13 +6,18 @@ import { PaymentSuccess } from "../PaymentSuccess";
 import { createPortal } from "react-dom";
 import { useApp } from "../AppProvider";
 
+interface PaymentFormProps {
+  price: number;
+  button_label: string;
+}
+
 declare global {
   interface Window {
     Razorpay: any;
   }
 }
 
-export const PaymentForm: React.FC = () => {
+export const PaymentForm: React.FC<PaymentFormProps> = ({ price, button_label }) => {
   const router = useRouter();
   const { managePaymentId, paymentId }: any = useApp();
 
@@ -30,13 +35,12 @@ export const PaymentForm: React.FC = () => {
     }
   }, []);
 
-  const paymentAmount = 9900; // Amount in paisa (1 INR = 100 paisa)
+  const paymentAmount = price; // Amount in paisa (1 INR = 100 paisa)
 
   const openRazorpay = () => {
     if (window?.Razorpay) {
       const options = {
-        key: "rzp_test_UeQD9MCnjj4aAn", // Enter your Razorpay API Key
-        // key: "rzp_test_9BfdzsMuAxlSUd", // Enter your Razorpay API Key
+        key: "rzp_test_UeQD9MCnjj4aAn",
         amount: paymentAmount,
         currency: "INR",
         name: "Bareilly Deals",
@@ -46,10 +50,8 @@ export const PaymentForm: React.FC = () => {
           color: "#ED1C24",
         },
         handler: function (response: any) {
-          // Modify this type if you know the response structure
           if (response?.razorpay_payment_id) {
             managePaymentId(response?.razorpay_payment_id);
-            // router.push(`/success/?id=${response.razorpay_payment_id}`);
           }
         },
       };
@@ -58,7 +60,6 @@ export const PaymentForm: React.FC = () => {
       rzp.open();
     } else {
       console.error("Razorpay script not loaded.");
-      // Handle error or provide fallback
     }
   };
 
@@ -66,17 +67,17 @@ export const PaymentForm: React.FC = () => {
     <>
       <button
         onClick={openRazorpay}
-        className=" absolute left-0 top-0 w-full h-full shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto"
-      ></button>
+        className=" absolute xl:left-[6%] lg:left-[6%] md:left-[6%] left-0 xl:right-[unset] lg:right-[unset] md:right-[unset] right-0 xl:w-[unset] lg:w-[unset] md:w-[unset] w-[59%] xl:bottom-[7%] lg:bottom-[7%] md:bottom-[7%] bottom-[3%] text-white xl:text-lg lg:text-lg md:text-lg text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto bg-[#ED1C24] text-white inline-block font-semibold text-center no-underline transition-all duration-[0.3s] rounded-[56px] border-0 before:bg-[initial] before:bg-[linear-gradient(#fff_0,rgba(255,255,255,0)_100%)] before:content-[''] before:h-3/6 before:opacity-50 before:absolute before:transition-all before:duration-[0.3s] before:w-[92%] before:rounded-[125px] before:left-[4%] before:top-0 after:bg-[initial] after:bg-[linear-gradient(#fff_0,rgba(255,255,255,0)_100%)] after:content-[''] after:h-3/6 after:opacity-50 after:absolute after:transition-all after:duration-[0.3s] after:w-[92%] after:rounded-[125px] after:left-[4%] after:top-0"
+      >{button_label}</button>
       {/* {createPortal(<PaymentSuccess />, document.body)} */}
+      {/* <button onClick={openRazorpay}
+        className=" absolute bg-[#ED1C24] left-[6%] bottom-[7%] text-white text-lg font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto before:content-[''] before:h-full before:absolute before:w-full before:rounded-[100%] before:scale-110">
+        {button_label}
+        <div className="before:bg-black before:content-[''] before:h-[50px] before:absolute before:w-[50px] before:rounded-[100%] after:bg-black after:content-[''] after:h-[50px] after:absolute after:w-[50px] after:rounded-[100%]">
+          <span className="h-[30px] left-[-15px] top-[-15px] w-[30px] text-[transparent] bg-[#FF914C]">.</span>
+          <span className="h-[25px] w-[25px] -left-5 top-10 bg-[#FF914C]"></span>
+        </div>
+      </button> */}
     </>
-  );
-  return (
-    <button
-      onClick={openRazorpay}
-      className="bg-[#ff8f4d] shadow-[0_10px_30px_rgba(0,0,0,0.1)] text-white text-sm font-bold  uppercase  px-[40px] py-[15px] rounded-xl flex m-auto"
-    >
-      Book Now
-    </button>
   );
 };
